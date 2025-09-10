@@ -1,0 +1,40 @@
+name: MineswarmBuilderTools
+version: "1.0.0"
+api-version: "1.21"
+main: com.mineswarm.tools.MineswarmBuilderTools
+description: "Build Tools for mineswarm"
+
+authors:
+  - Steven Byrne
+
+# If you have required/optional plugin dependencies, list them like this:
+# depend:
+#   - SomeRequiredPlugin
+# softdepend:
+#   - Vault
+# loadbefore:
+#   - AnotherPlugin
+
+commands:
+  buildertools:
+    description: "CoreAccess main command"
+    usage: "/<command> [args]"
+    aliases:
+      - bt
+    permission: buildertools.use
+
+permissions:
+  buildertools.*:
+    description: "All CoreAccess permissions"
+    default: op
+    children:
+      buildertools.use: true
+      buildertools.reload: true
+
+  buildertools.use:
+    description: "Use CoreAccess features"
+    default: true
+
+  buildertools.reload:
+    description: "Reload the plugin config"
+    default: op
